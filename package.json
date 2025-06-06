@@ -1,18 +1,25 @@
 {
-  "name": "react-three-fiber-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.jsx",
-  "devDependencies": {
-    "@react-three/fiber": "^8.16.8",
-    "r3f-pack": "^2.8.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "three": "^0.165.0"
-  },
+  "name": "elessia",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "r3f-pack start",
-    "build": "r3f-pack build"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.3.3"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "@eslint/eslintrc": "^3"
   }
 }
