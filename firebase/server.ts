@@ -30,3 +30,11 @@ if (!currentApps.length) {
 }
 
 export {firestore} 
+
+
+/* Try this if has issues
+
+private_key: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+
+
+*/
