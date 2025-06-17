@@ -51,7 +51,11 @@ export default function AuthButtons() {
             <DropdownMenuItem asChild>
               <Link href='/account/my-favourites'>My Favourites</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={async () => {
+                await auth.logout()
+              }}
+            >
               Logout              
             </DropdownMenuItem>
           </DropdownMenuContent>          
