@@ -8,8 +8,7 @@ export default function ContinueWithGoogleButton() {
   return (
     <Button
       onClick={() => {
-        const provider = new GoogleAuthProvider()
-        signInWithPopup(auth, provider)
+ 
       }}
     >
       Continue with Google
