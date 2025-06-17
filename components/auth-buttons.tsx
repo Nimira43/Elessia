@@ -2,6 +2,9 @@
 
 import { useAuth } from '@/context/auth'
 import Link from 'next/link'
+import { DropdownMenu, DropdownMenuTrigger } from './ui/dropdown-menu'
+import { Avatar } from './ui/avatar'
+import Image from 'next/image'
 
 export default function AuthButtons() {
   const auth = useAuth()
@@ -9,16 +12,21 @@ export default function AuthButtons() {
   return (
     <div>
       {!!auth?.currentUser && (
-        <>
-          <div>
-            {auth.currentUser.email}
-          </div>
-          <div onClick={() => {
-            auth.logout()
-          }}>
-            Logout
-          </div>
-        </>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Avatar>
+              {!!auth.currentUser.photoURL && (
+                <Image
+                  src={auth.currentUser.photoURL}
+                  alt={`${auth.currentUser.displayName} avatar`}
+                  width={70}
+                  height={70}
+                />  
+              )}
+              
+            </Avatar>
+          </DropdownMenuTrigger>          
+        </DropdownMenu>
       )}
       {!auth?.currentUser && (
         <div className='flex gap-2 items-center '>
