@@ -6,7 +6,7 @@ export default function Login() {
     <Card>
       <CardHeader>
         <CardTitle
-          className='font-medium uppercase'
+          className='font-medium uppercase text-3xl '
         >
           Login
         </CardTitle>
