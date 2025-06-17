@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuth } from '@/context/auth'
+import Link from 'next/link'
 
 export default function AuthButtons() {
   const auth = useAuth()
@@ -19,7 +20,14 @@ export default function AuthButtons() {
       )}
       {!auth?.currentUser && (
         <>
-          
+          <li>
+            <Link href='/login'>
+              Login
+            </Link>
+            <Link href='/register'>
+              Register
+            </Link>
+          </li>
         </>
       )} 
     </div>
