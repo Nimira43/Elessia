@@ -3,6 +3,7 @@
 import { auth } from '@/firebase/client'
 import { GoogleAuthProvider, ParsedToken, signInWithPopup, User } from 'firebase/auth'
 import  { createContext, useContext, useEffect, useState } from 'react'
+import { setToken } from './actions'
 
 type AuthContextType = {
   currentUser: User | null
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }: {
   children: React.ReactNode
 }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
-  const [customeClaims, setCustomClaims] = useState<ParsedToken | null>(null)
+  const [customClaims, setCustomClaims] = useState<ParsedToken | null>(null)
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -27,6 +28,13 @@ export const AuthProvider = ({ children }: {
         const refreshToken = user.refreshToken
         const claims = tokenResult.claims
         setCustomClaims(claims ?? null)
+
+        if (token && refreshToken) {
+          await setToken({
+            token,
+            refreshToken
+          })
+        }
       }
     })
     return () => unsubscribe() 
