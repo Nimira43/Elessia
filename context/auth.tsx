@@ -1,7 +1,8 @@
 'use client'
 
+import { auth } from '@/firebase/client'
 import { User } from 'firebase/auth'
-import  { createContext, useState } from 'react'
+import  { createContext, useEffect, useState } from 'react'
 
 type AuthContextType = {
   currentUser: User | null
@@ -12,13 +13,20 @@ const AuthContext = createContext<AuthContextType | null>(null)
 export const AuthProvider = ({ children }: {
   children: React.ReactNode
 }) => {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      
+    }) 
+  }, [])
 
   return (  
 
     <AuthContext.Provider
       value={
-        currentUser
+        currentUser,
+
       }
     >
       {children}
