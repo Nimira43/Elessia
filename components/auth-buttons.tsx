@@ -21,16 +21,20 @@ export default function AuthButtons() {
         </>
       )}
       {!auth?.currentUser && (
-        <>
-          <li>
-            <Link href='/login'>
-              Login
-            </Link>
-            <Link href='/register'>
-              Register
-            </Link>
-          </li>
-        </>
+        <div className='flex gap-2 items-center '>
+          <Link
+            className='font-medium uppercase hover:text-support-light btn-hover' 
+            href='/login'
+          >
+            Login
+          </Link>
+          <Link 
+            className='font-medium uppercase hover:text-support-light btn-hover'
+            href='/register'
+          >
+            Register
+          </Link>
+        </div>
       )} 
     </div>
   )

@@ -33,7 +33,7 @@ export default function RootLayout({
               <GiCat />
               <span>Elessia</span>
             </Link>
-            <ul>
+            <ul className='flex gap-6 items-center'>
               <li>
                 <Link 
                   className='uppercase font-medium hover:text-support-light btn-hover'
