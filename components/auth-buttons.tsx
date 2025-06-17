@@ -1,6 +1,10 @@
 'use client'
 
-export default function auth-buttons() {
+import { useAuth } from '@/context/auth'
+
+export default function AuthButtons() {
+  
+
   return (
     <div>auth-buttons</div>
   )
