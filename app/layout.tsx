@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={poppins.className}>
         <AuthProvider>
-          <nav className='bg-dark text-light p-5 h-24 flex items-center justify-between'>
+          <nav className='bg-primary text-light p-5 h-24 flex items-center justify-between'>
             <Link 
               href='/'
               className='text-3xl logo flex items-center'  
@@ -34,7 +34,17 @@ export default function RootLayout({
               <span>Elessia</span>
             </Link>
             <ul>
-              <AuthButtons />
+              <li>
+                <Link 
+                  className='uppercase font-medium hover:text-support-light btn-hover'
+                  href='/property-search'
+                >
+                  Property Search
+                </Link>
+              </li>
+              <li>
+                <AuthButtons />
+              </li>
             </ul>
           </nav>
           {children}

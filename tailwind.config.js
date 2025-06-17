@@ -10,8 +10,8 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
-  			'main': '#ff4500',
-  			'support': '#008080',
+  			'support-dark': '#ffd700',
+  			'support-light': '#fff3ad',
   			'dark': '#111',
   			'light': '#fffcfa',
   			'grey-dark': '#333',

@@ -12,6 +12,10 @@
   font-family: 'Meie Script', cursive;
 }
 
+.btn-hover {
+  transition: all 0.5s ease;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
