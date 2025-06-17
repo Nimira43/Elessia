@@ -4,6 +4,7 @@ import './globals.css'
 import Link from 'next/link'
 import { AuthProvider } from '@/context/auth'
 import AuthButtons from '@/components/auth-buttons'
+import { GiCat } from 'react-icons/gi'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,13 +26,15 @@ export default function RootLayout({
       <body className={poppins.className}>
         <AuthProvider>
           <nav className='bg-dark text-light p-5 h-24 flex items-center justify-between'>
-            <Link href='/'>
-              Elessia
+            <Link 
+              href='/'
+              className='text-3xl logo flex items-center'  
+            >
+              <GiCat />
+              <span>Elessia</span>
             </Link>
             <ul>
-              <li>
-                <AuthButtons />
-              </li>
+              <AuthButtons />
             </ul>
           </nav>
           {children}
