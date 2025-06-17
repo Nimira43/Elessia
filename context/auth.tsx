@@ -2,7 +2,7 @@
 
 import { auth } from '@/firebase/client'
 import { User } from 'firebase/auth'
-import  { createContext, useEffect, useState } from 'react'
+import  { createContext, useContext, useEffect, useState } from 'react'
 
 type AuthContextType = {
   currentUser: User | null
@@ -33,3 +33,5 @@ export const AuthProvider = ({ children }: {
     </AuthContext.Provider>
   )
 }
+
+export const useAuth = () => useContext(AuthContext)
