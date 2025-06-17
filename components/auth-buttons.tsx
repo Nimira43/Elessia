@@ -7,7 +7,7 @@ export default function AuthButtons() {
 
   return (
     <div>
-      {!!auth?.currentUser &&
+      {!!auth?.currentUser && (
         <>
           <div>
             {auth.currentUser.email}
@@ -16,7 +16,12 @@ export default function AuthButtons() {
             Logout
           </div>
         </>
-      } 
+      )}
+      {!auth?.currentUser && (
+        <>
+          
+        </>
+      )} 
     </div>
   )
 }

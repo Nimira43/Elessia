@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import { AuthProvider } from '@/context/auth'
+import AuthButtons from '@/components/auth-buttons'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,14 +30,7 @@ export default function RootLayout({
             </Link>
             <ul>
               <li>
-                <Link href='/login'>
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link href='/register'>
-                  Register
-                </Link>
+                <AuthButtons />
               </li>
             </ul>
           </nav>
