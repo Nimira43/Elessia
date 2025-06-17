@@ -1,4 +1,3 @@
-import { admin } from 'firebase-admin';
 'use server'
 
 import { auth } from '@/firebase/server'

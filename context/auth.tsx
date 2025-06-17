@@ -18,8 +18,14 @@ export const AuthProvider = ({ children }: {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
       setCurrentUser(user ?? null)
+      if (user) {
+        const tokenResult = await user.getIdTokenResult()
+        const token = tokenResult.token
+        const refreshToken = user.refreshToken
+      
+      }
     })
     return () => unsubscribe() 
   }, [])
