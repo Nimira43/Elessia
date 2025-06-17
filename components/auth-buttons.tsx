@@ -3,7 +3,7 @@
 import { useAuth } from '@/context/auth'
 import Link from 'next/link'
 import { DropdownMenu, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { Avatar } from './ui/avatar'
+import { Avatar, AvatarFallback } from './ui/avatar'
 import Image from 'next/image'
 
 export default function AuthButtons() {
@@ -23,6 +23,9 @@ export default function AuthButtons() {
                   height={70}
                 />  
               )}
+              <AvatarFallback>
+                {(auth.currentUser.displayName || auth.currentUser.email)?.[0]}
+              </AvatarFallback>
               
             </Avatar>
           </DropdownMenuTrigger>          
