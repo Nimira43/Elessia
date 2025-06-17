@@ -9,5 +9,10 @@ export const setToken = async ({
   token: string
   refreshToken: string
 }) => {
-  const verifiedToken = auth
+  try {
+    const verifiedToken = await auth.verifyIdToken(token)  
+  } catch (e) {
+    console.log(e)
+  }
+  
 }
