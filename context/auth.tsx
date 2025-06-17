@@ -5,7 +5,8 @@ import { User } from 'firebase/auth'
 import  { createContext, useContext, useEffect, useState } from 'react'
 
 type AuthContextType = {
-  currentUser: User | null
+  currentUser: User | null,
+  logout: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType | null>(null)
@@ -22,11 +23,16 @@ export const AuthProvider = ({ children }: {
     return () => unsubscribe() 
   }, [])
 
+  const logout = async () => {
+    await auth.signOut()
+  }
+
   return (  
 
     <AuthContext.Provider
       value={{
         currentUser,
+        logout
       }}
     >
       {children}
