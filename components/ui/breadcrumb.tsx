@@ -4,6 +4,15 @@ import { ChevronRight, MoreHorizontal } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
+const Breadcrumbs = ({items}: {
+  items: {
+    href?: string
+    label: string
+  }[]
+}) => {
+  
+}
+
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   React.ComponentPropsWithoutRef<'nav'> & {
