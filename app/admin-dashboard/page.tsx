@@ -12,7 +12,7 @@ export default function AdminDashboard() {
         }]}
       />
       <h1 className='text-4xl font-medium mt-6'>Admin Dashboard</h1>
-      <Button asChild>
+      <Button asChild className='inline-flex pl-2 gap-2 mt-4'>
         <Link href='/admin-dashboard/new'>
           <AiOutlinePlus />
           New Property
