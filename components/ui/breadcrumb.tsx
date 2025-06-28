@@ -3,6 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const Breadcrumbs = ({items}: {
   items: {
@@ -10,8 +11,29 @@ const Breadcrumbs = ({items}: {
     label: string
   }[]
 }) => {
-  
+  return (
+    <Breadcrumb>
+      <BreadcrumbList>
+        {items.map((item, i) => (
+          <BreadcrumbItem key={i}>
+            {!!item.href &&
+              <Link href={item.href}
+              >
+                {item.label}
+              </Link>
+            }
+            {!item.href &&
+              <BreadcrumbPage>
+                {item.label}
+              </BreadcrumbPage>
+            }
+          </BreadcrumbItem>
+        ))}
+      </BreadcrumbList>
+    </Breadcrumb>
+  )
 }
+Breadcrumbs.displayName= 'Breadceumbs'
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -115,6 +137,7 @@ BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis'
 
 export {
   Breadcrumb,
+  Breadcrumbs,
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
