@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '@/components/ui/breadcrumb'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function NewProperty() {
   return (
@@ -21,6 +21,9 @@ export default function NewProperty() {
             New Property
           </CardTitle>
         </CardHeader>
+        <CardContent> 
+          <NewPropertyForm />
+        </CardContent>
       </Card>
     </div>
   )
