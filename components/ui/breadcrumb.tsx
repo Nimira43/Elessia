@@ -15,19 +15,25 @@ const Breadcrumbs = ({items}: {
     <Breadcrumb>
       <BreadcrumbList>
         {items.map((item, i) => (
-          <BreadcrumbItem key={i}>
-            {!!item.href &&
-              <Link href={item.href}
-              >
-                {item.label}
-              </Link>
+          <React.Fragment key={i}>
+            <BreadcrumbItem >
+              {!!item.href &&
+                <Link href={item.href}
+                >
+                  {item.label}
+                </Link>
+              }
+              {!item.href &&
+                <BreadcrumbPage>
+                  {item.label}
+                </BreadcrumbPage>
+              }
+            </BreadcrumbItem>
+            {
+              i < items.length - 1 &&
+              <BreadcrumbSeparator />
             }
-            {!item.href &&
-              <BreadcrumbPage>
-                {item.label}
-              </BreadcrumbPage>
-            }
-          </BreadcrumbItem>
+          </React.Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>
