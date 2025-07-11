@@ -6,6 +6,7 @@
 
 * {
   font-weight: 300;
+  
 }
 
 .logo {
@@ -81,3 +82,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+nav ul li div button,
+nav ul li div button:hover, 
+nav ul li div button:focus,
+nav ul li div button:focus-visible {
+  outline: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  --tw-ring-offset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  --tw-ring-color: transparent !important;
+}
+
+
