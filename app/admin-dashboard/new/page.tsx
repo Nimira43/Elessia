@@ -1,4 +1,5 @@
-import { Breadcrumbs } from "@/components/ui/breadcrumb";
+import { Breadcrumbs } from '@/components/ui/breadcrumb'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function NewProperty() {
   return (
@@ -14,6 +15,13 @@ export default function NewProperty() {
           }
         ]} 
       />
+      <Card>
+        <CardHeader>
+          <CardTitle className='text-3xl font-medium'>
+            New Property
+          </CardTitle>
+        </CardHeader>
+      </Card>
     </div>
   )
 }
