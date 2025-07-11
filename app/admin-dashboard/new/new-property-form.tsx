@@ -1,10 +1,7 @@
 'use client'
 
-import { z } from 'zod'
+import { propertyDataSchema } from '@/validation/propertySchema'
 
-const formSchema = z.object({
-  
-})
 
 export default function NewPropertyForm() {
   return (

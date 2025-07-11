@@ -1,5 +1,5 @@
 import z from 'zod'
 
-const propertyDataSchena = z.object({
-  
+export const propertyDataSchema = z.object({
+
 })
