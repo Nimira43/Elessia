@@ -5,7 +5,11 @@ import { propertyDataSchema } from '@/validation/propertySchema'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export default function PropertyForm() {
+type Props = {
+  handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
+}
+
+export default function PropertyForm({handleSubmit}: Props) {
   const form = useForm<z.infer<typeof propertyDataSchema>>({
     resolver: zodResolver(propertyDataSchema),
     defaultValues: {
