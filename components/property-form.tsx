@@ -26,8 +26,12 @@ export default function PropertyForm({handleSubmit}: Props) {
   })
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit()}>
-
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
+        <div className='grid grid-cols-2'>
+          <fieldset>
+            
+          </fieldset>
+        </div>
       </form>
     </Form>
   )
