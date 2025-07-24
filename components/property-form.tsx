@@ -112,6 +112,21 @@ export default function PropertyForm({handleSubmit}: Props) {
                 </FormItem>
               )} 
             />
+            <FormField 
+              control={form.control} 
+              name='postcode' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Post Code
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
           </fieldset>
         </div>
       </form>
