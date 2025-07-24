@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
+import { Button } from './ui/button'
 
 type Props = {
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
@@ -192,6 +193,9 @@ export default function PropertyForm({handleSubmit}: Props) {
             />
           </fieldset>
         </div>
+        <Button type='submit'>
+          
+        </Button>
       </form>
     </Form>
   )
