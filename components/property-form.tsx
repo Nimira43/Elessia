@@ -6,6 +6,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { Input } from './ui/input'
 
 type Props = {
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
@@ -75,7 +76,22 @@ export default function PropertyForm({handleSubmit}: Props) {
                     Address 1
                   </FormLabel>
                   <FormControl>
-                    
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+            <FormField 
+              control={form.control} 
+              name='address2' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Address 2
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
