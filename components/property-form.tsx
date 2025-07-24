@@ -11,10 +11,14 @@ import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 
 type Props = {
+  submitButtonLabel: React.ReactNode
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
 }
 
-export default function PropertyForm({handleSubmit}: Props) {
+export default function PropertyForm({
+  handleSubmit,
+  submitButtonLabel
+}: Props) {
   const form = useForm<z.infer<typeof propertyDataSchema>>({
     resolver: zodResolver(propertyDataSchema),
     defaultValues: {
@@ -194,7 +198,7 @@ export default function PropertyForm({handleSubmit}: Props) {
           </fieldset>
         </div>
         <Button type='submit'>
-          
+
         </Button>
       </form>
     </Form>
