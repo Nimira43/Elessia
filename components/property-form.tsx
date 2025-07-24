@@ -4,6 +4,7 @@ import { Form, useForm } from 'react-hook-form'
 import { propertyDataSchema } from '@/validation/propertySchema'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { FormControl, FormField, FormItem } from './ui/form'
 
 type Props = {
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
@@ -29,8 +30,18 @@ export default function PropertyForm({handleSubmit}: Props) {
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className='grid grid-cols-2'>
           <fieldset>
-            
-          </fieldset>
+            <FormField 
+              control={form.control} 
+              name='status' 
+              render={({field}) => (
+                <FormItem>
+                  <FormControl>
+                    
+                  </FormControl>
+                </FormItem>
+              )} 
+            ></FormField>
+            </fieldset>
         </div>
       </form>
     </Form>
