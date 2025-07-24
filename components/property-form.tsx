@@ -198,7 +198,7 @@ export default function PropertyForm({
           </fieldset>
         </div>
         <Button type='submit'>
-
+          {submitButtonLabel}
         </Button>
       </form>
     </Form>
