@@ -31,7 +31,7 @@ export default function PropertyForm({handleSubmit}: Props) {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <div className='grid grid-cols-2'>
+        <div className='grid grid-cols-2 gap-4'>
           <fieldset className='flex flex-col gap-2'>
             <FormField 
               control={form.control} 
