@@ -21,7 +21,7 @@ export const propertyDataSchema = z.object({
     .positive('Price must be greater than zero'),
   description: z
     .string()
-    .min(40, 'Description must containe at least forty characters'),
+    .min(40, 'Description must contain at least forty characters'),
   bedrooms: z.coerce
     .number()
     .min(0, 'Bedrooms must be a number and can include zero.'),
