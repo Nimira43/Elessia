@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Input } from './ui/input'
+import { Textarea } from './ui/textarea'
 
 type Props = {
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
@@ -176,29 +177,14 @@ export default function PropertyForm({handleSubmit}: Props) {
             />
             <FormField 
               control={form.control} 
-              name='city' 
+              name='description' 
               render={({field}) => (
                 <FormItem>
                   <FormLabel>
-                    City
+                    Description
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} 
-            />
-            <FormField 
-              control={form.control} 
-              name='postcode' 
-              render={({field}) => (
-                <FormItem>
-                  <FormLabel>
-                    Post Code
-                  </FormLabel>
-                  <FormControl>
-                    <Input {...field} />
+                    <Textarea {...field} rows={5} className='resize-none' />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
