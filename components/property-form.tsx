@@ -1,10 +1,10 @@
 'use client'
 
-import { Form, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { propertyDataSchema } from '@/validation/propertySchema'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { FormControl, FormField, FormItem } from './ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 type Props = {
@@ -36,7 +36,9 @@ export default function PropertyForm({handleSubmit}: Props) {
               name='status' 
               render={({field}) => (
                 <FormItem>
-                  
+                  <FormLabel>
+                    Status
+                  </FormLabel>
                   <FormControl>
                     <Select 
                       onValueChange={field.onChange}
@@ -60,10 +62,26 @@ export default function PropertyForm({handleSubmit}: Props) {
                       </SelectContent>  
                     </Select>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )} 
-            ></FormField>
-            </fieldset>
+            />
+            <FormField 
+              control={form.control} 
+              name='address1' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Address 1
+                  </FormLabel>
+                  <FormControl>
+                    
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+          </fieldset>
         </div>
       </form>
     </Form>
