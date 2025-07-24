@@ -1,6 +1,6 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
+import { Form, useForm } from 'react-hook-form'
 import { propertyDataSchema } from '@/validation/propertySchema'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -21,8 +21,10 @@ export default function PropertyForm() {
     }
   })
   return (
-    <div>
-      Property Form
-    </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit()}>
+
+      </form>
+    </Form>
   )
 }
