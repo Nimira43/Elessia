@@ -30,6 +30,6 @@ export const propertyDataSchema = z.object({
     .min(0, 'Bathrooms must be a number and can include zero.'),
   status: z
     .enum([
-      'Draft', 'For Sale', 'Withdrawn', 'Sold'
+      'draft', 'for sale', 'withdrawn', 'sold'
     ])
 })
