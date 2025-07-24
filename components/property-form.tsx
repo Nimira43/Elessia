@@ -197,7 +197,10 @@ export default function PropertyForm({
             />
           </fieldset>
         </div>
-        <Button type='submit'>
+        <Button 
+          type='submit'
+          className='max-w-md mx-auto mt-2 w-full flex gap-2'
+        >
           {submitButtonLabel}
         </Button>
       </form>
