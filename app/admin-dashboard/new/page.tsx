@@ -18,7 +18,7 @@ export default function NewProperty() {
       />
       <Card className='mt-5'>
         <CardHeader>
-          <CardTitle className='text-3xl font-medium'>
+          <CardTitle className='text-3xl font-medium uppercase'>
             New Property
           </CardTitle>
         </CardHeader>
