@@ -36,7 +36,7 @@ export default function PropertyForm({handleSubmit}: Props) {
               render={({field}) => (
                 <FormItem>
                   <FormControl>
-                    
+                    <Select
                   </FormControl>
                 </FormItem>
               )} 
