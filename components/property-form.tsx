@@ -5,6 +5,7 @@ import { propertyDataSchema } from '@/validation/propertySchema'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormControl, FormField, FormItem } from './ui/form'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 type Props = {
   handleSubmit: (data: z.infer<typeof propertyDataSchema>) => void
@@ -35,8 +36,29 @@ export default function PropertyForm({handleSubmit}: Props) {
               name='status' 
               render={({field}) => (
                 <FormItem>
+                  
                   <FormControl>
-                    <Select
+                    <Select 
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>                    <SelectContent>
+                        <SelectItem value='draft'>
+                          Draft
+                        </SelectItem>
+                        <SelectItem value='for sale'>
+                          For Sale
+                        </SelectItem>
+                        <SelectItem value='withdrawn'>
+                          Withdrawn
+                        </SelectItem>
+                        <SelectItem value='sold'>
+                          Sold
+                        </SelectItem>
+                      </SelectContent>  
+                    </Select>
                   </FormControl>
                 </FormItem>
               )} 
