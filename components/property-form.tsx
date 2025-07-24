@@ -31,7 +31,7 @@ export default function PropertyForm({handleSubmit}: Props) {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className='grid grid-cols-2'>
-          <fieldset>
+          <fieldset className='flex flex-col gap-2'>
             <FormField 
               control={form.control} 
               name='status' 
@@ -92,6 +92,83 @@ export default function PropertyForm({handleSubmit}: Props) {
                   </FormLabel>
                   <FormControl>
                     <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+            <FormField 
+              control={form.control} 
+              name='city' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    City
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+            <FormField 
+              control={form.control} 
+              name='postcode' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Post Code
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+          </fieldset>
+          <fieldset className='flex flex-col gap-2'>
+            <FormField 
+              control={form.control} 
+              name='price' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Price
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} type='number' />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+            <FormField 
+              control={form.control} 
+              name='bedrooms' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Bedrooms
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} type='number' />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} 
+            />
+            <FormField 
+              control={form.control} 
+              name='bathrooms' 
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                    Bathrooms
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} type='number' />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
