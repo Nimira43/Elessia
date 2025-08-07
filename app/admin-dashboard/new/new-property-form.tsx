@@ -21,7 +21,7 @@ export default function NewPropertyForm() {
       ...data,
       token
     })
-    console.log(data)
+    console.log(response)
   }
 
   return (
