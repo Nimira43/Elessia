@@ -12,6 +12,11 @@ export default function NewPropertyForm() {
 
   const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {
     const token = await auth?.currentUser?.getIdToken()
+
+    if (!token) {
+      return
+    }
+
     const response = await saveNewProperty({
       ...data,
       token
