@@ -1,6 +1,6 @@
 'use server'
 
-import { auth } from '@/firebase/server'
+import { auth, firestore } from '@/firebase/server'
 import { propertyDataSchema } from '@/validation/propertySchema'
 
 export const saveNewProperty = async (data: {
@@ -32,4 +32,10 @@ export const saveNewProperty = async (data: {
       message: validation.error.issues[0]?.message ?? 'An error occurred.'
     }
   }
+
+  const property = await firestore.collection('properties').add({
+    ...propertyData,
+    created: new Date(),
+    updated: new Date()
+  })
 }
