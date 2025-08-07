@@ -1,6 +1,7 @@
 'use server'
 
 import { auth } from '@/firebase/server'
+import { propertyDataSchema } from '@/validation/propertySchema'
 
 export const saveNewProperty = async (data: {
   address1: string
@@ -14,7 +15,8 @@ export const saveNewProperty = async (data: {
   status: 'draft' | 'for sale' | 'withdrawn' | 'sold'
   token: string
 }) => {
-  const verifiedToken = await auth.verifyIdToken(data.token)
+  const {token, ...propertyData} = data
+  const verifiedToken = await auth.verifyIdToken(token)
 
   if (!verifiedToken.admin) {
     return {
@@ -23,5 +25,5 @@ export const saveNewProperty = async (data: {
     }
   }
 
-  
+  const validation = propertyDataSchema.safeParse(propertyData)
 }
