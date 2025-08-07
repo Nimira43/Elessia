@@ -15,4 +15,13 @@ export const saveNewProperty = async (data: {
   token: string
 }) => {
   const verifiedToken = await auth.verifyIdToken(data.token)
+
+  if (!verifiedToken.admin) {
+    return {
+      error: true,
+      message: 'Unauthorised.'
+    }
+  }
+
+  
 }
