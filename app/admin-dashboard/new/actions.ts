@@ -26,4 +26,10 @@ export const saveNewProperty = async (data: {
   }
 
   const validation = propertyDataSchema.safeParse(propertyData)
+  if (!validation.success) {
+    return {
+      error: true,
+      message: validation.error.issues[0]?.message ?? 'An error occurred.'
+    }
+  }
 }
