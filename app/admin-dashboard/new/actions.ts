@@ -38,4 +38,8 @@ export const saveNewProperty = async (data: {
     created: new Date(),
     updated: new Date()
   })
+
+  return {
+    propertyId: property.id,
+  }
 }
