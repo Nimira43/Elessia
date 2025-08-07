@@ -1,6 +1,8 @@
 'use server'
 
-export const saveNewProperty = async (data : {
+import { auth } from '@/firebase/server'
+
+export const saveNewProperty = async (data: {
   address1: string
   address2?: string
   city: string
@@ -10,4 +12,7 @@ export const saveNewProperty = async (data : {
   bedrooms: number
   bathrooms: number
   status: 'draft' | 'for sale' | 'withdrawn' | 'sold'
-}) => {}
+  token: string
+}) => {
+  const verifiedToken = await auth.verifyIdToken(data.token)
+}
