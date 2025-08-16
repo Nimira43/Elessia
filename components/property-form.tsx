@@ -137,7 +137,10 @@ export default function PropertyForm({
               )} 
             />
           </fieldset>
-          <fieldset className='flex flex-col gap-2'>
+          <fieldset 
+            className='flex flex-col gap-2'
+            disabled={form.formState.isSubmitting}
+          >
             <FormField 
               control={form.control} 
               name='price' 
@@ -203,6 +206,7 @@ export default function PropertyForm({
         <Button 
           type='submit'
           className='max-w-md mx-auto mt-2 w-full flex gap-2'
+          disabled={form.formState.isSubmitting}
         >
           {submitButtonLabel}
         </Button>
