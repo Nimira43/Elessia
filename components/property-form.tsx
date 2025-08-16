@@ -37,7 +37,10 @@ export default function PropertyForm({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className='grid grid-cols-2 gap-4'>
-          <fieldset className='flex flex-col gap-2'>
+          <fieldset 
+            className='flex flex-col gap-2'
+            disabled={form.formState.isSubmitting}
+          >
             <FormField 
               control={form.control} 
               name='status' 
