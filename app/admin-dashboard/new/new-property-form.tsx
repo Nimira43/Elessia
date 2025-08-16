@@ -6,9 +6,12 @@ import z from 'zod'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { useAuth } from '@/context/auth'
 import { saveNewProperty } from './actions'
+import { toast } from '@/hooks/use-toast'
+import { useRouter } from 'next/navigation'
 
 export default function NewPropertyForm() {
   const auth = useAuth()
+  const router = useRouter()
 
   const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {
     const token = await auth?.currentUser?.getIdToken()
@@ -21,6 +24,21 @@ export default function NewPropertyForm() {
       ...data,
       token
     })
+
+    if (!!response.error) {
+      toast({
+        title: 'Error',
+        description: response.error,
+        variant: 'destructive',
+      })
+      return
+    }
+    toast({
+      title: 'Success',
+      description: 'Property created.',
+    })
+    
+    router.push('/admin-dashboard')
     console.log(response)
   }
 
