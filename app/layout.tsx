@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { AuthProvider } from '@/context/auth'
 import AuthButtons from '@/components/auth-buttons'
 import { GiCat } from 'react-icons/gi'
+import { Toaster } from '@/components/ui/toaster'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
             </ul>
           </nav>
           {children}
+          <Toaster />
         </AuthProvider>
         
       </body>
