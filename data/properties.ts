@@ -23,6 +23,12 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
   let propertiesQuery = firestore.collection('properties').orderBy('updated', 'desc')
 
   if (minPrice !== null && minPrice !== undefined) {
-    
+    propertiesQuery = propertiesQuery.where('price', '>=', minPrice)
+  }
+  if (maxPrice !== null && maxPrice !== undefined) {
+    propertiesQuery = propertiesQuery.where('price', '<=', maxPrice)
+  }
+  if (minBedrooms !== null && minBedrooms !== undefined) {
+    propertiesQuery = propertiesQuery.where('bedrooms', '>=', minBedrooms)
   }
 }
