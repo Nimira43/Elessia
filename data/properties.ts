@@ -6,7 +6,11 @@ type getPropertiesOptions = {
     minPrice?: number | null 
     maxPrice?: number | null 
     minBedrooms?: number | null 
-    status?: number | null 
+    status?: PropertyStatus[] | null 
+  },
+  pagination?: {
+    pageSize?: number
+    page?: number
   }
 }
 
