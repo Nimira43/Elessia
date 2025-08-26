@@ -35,5 +35,14 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
     propertiesQuery = propertiesQuery.where('status', 'in', status)
   }
 
-  const propertiesSnapshot = await propertiesQuery.limit(pageSize).offset((page - 1) * pageSize)
+  const propertiesSnapshot = await propertiesQuery
+    .limit(pageSize)
+    .offset((page - 1) * pageSize).get()
+
+  const properties = propertiesSnapshot.docs.map(doc => ({
+    id: doc.id,
+  ...doc.data()
+  }))
+
+  return { data: properties}
 }
