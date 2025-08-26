@@ -34,4 +34,6 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
   if (status) {
     propertiesQuery = propertiesQuery.where('status', 'in', status)
   }
+
+  const propertiesSnapshot = await propertiesQuery.limit(pageSize).offset((page - 1) * pageSize)
 }
