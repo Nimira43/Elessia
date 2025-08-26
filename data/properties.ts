@@ -1,4 +1,5 @@
 import 'server-only'
+import { PropertyStatus } from '@/types/propertyStatus'
 
 type getPropertiesOptions = {
   filters?: {
