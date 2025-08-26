@@ -1,5 +1,6 @@
 import 'server-only'
 import { PropertyStatus } from '@/types/propertyStatus'
+import { firestore } from '@/firebase/server'
 
 type GetPropertiesOptions = {
   filters?: {
@@ -18,4 +19,10 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
   const page = options?.pagination?.page || 1
   const pageSize = options?.pagination?.pageSize || 10
   const { minPrice, maxPrice, minBedrooms, status} = options?.filters || {}
+
+  let propertiesQuery = firestore.collection('properties').orderBy('updated', 'desc')
+
+  if (minPrice !== null && minPrice !== undefined) {
+    
+  }
 }
