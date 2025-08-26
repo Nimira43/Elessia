@@ -1,7 +1,7 @@
 import 'server-only'
 import { PropertyStatus } from '@/types/propertyStatus'
 
-type getPropertiesOptions = {
+type GetPropertiesOptions = {
   filters?: {
     minPrice?: number | null 
     maxPrice?: number | null 
@@ -15,5 +15,7 @@ type getPropertiesOptions = {
 }
 
 export const getProperties = async (options?: GetPropertiesOptions) => {
-
+  const page = options?.pagination?.page || 1
+  const pageSize = options?.pagination?.pageSize || 10
+  const { minPrice, maxPrice, minBedrooms, status} = options?.filters || {}
 }
