@@ -6,6 +6,7 @@ import { AiOutlinePlus } from 'react-icons/ai'
 
 export default async function AdminDashboard() {
   const data = await getProperties()
+  console.log(data)
 
   return (
     <div>
