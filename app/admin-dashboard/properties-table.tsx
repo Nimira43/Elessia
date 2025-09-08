@@ -1,4 +1,4 @@
-import { Table, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getProperties } from '@/data/properties'
 
 export default async function PropertiesTable() {
@@ -14,11 +14,23 @@ export default async function PropertiesTable() {
         <Table className='mt-5'>
           <TableHeader>
             <TableRow>
-              <TableHead>
-                
-              </TableHead>
+              <TableHead>Address</TableHead>
+              <TableHead>Listing Price</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead />
             </TableRow>
           </TableHeader>
+          <TableBody>
+            {data.map(property => {
+              return (
+                <TableRow key={property.id}>
+                  <TableCell>
+                    
+                  </TableCell>
+                </TableRow>
+              )
+            })}
+          </TableBody>
         </Table>
       }
     </>
