@@ -32,9 +32,10 @@ export default async function PropertiesTable() {
                 .join(', ')
               return (
                 <TableRow key={property.id}>
-                  <TableCell>
-
-                  </TableCell>
+                  <TableCell>{address}</TableCell>
+                  <TableCell>{property.price}</TableCell>
+                  <TableCell>{property.status}</TableCell>
+                  <TableCell>View | Edit</TableCell>
                 </TableRow>
               )
             })}
