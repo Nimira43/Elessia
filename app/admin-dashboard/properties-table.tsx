@@ -5,8 +5,10 @@ export default async function PropertiesTable() {
   console.log({data})
   
   return (
-    <div>
-      Properties Table
-    </div>
+    <>
+      {!data && 
+        <h1 className='text-center text-dark py-20 font-medium text-3xl'>There are no propeties to show.</h1>
+      }
+    </>
   )
 }
