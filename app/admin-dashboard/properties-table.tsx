@@ -22,10 +22,18 @@ export default async function PropertiesTable() {
           </TableHeader>
           <TableBody>
             {data.map(property => {
+              const address = [
+                property.address1,
+                property.address2,
+                property.city,
+                property.postcode,
+              ]
+                .filter(addressLine => !!addressLine)
+                .join(', ')
               return (
                 <TableRow key={property.id}>
                   <TableCell>
-                    
+
                   </TableCell>
                 </TableRow>
               )
