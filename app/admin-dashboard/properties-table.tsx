@@ -4,7 +4,7 @@ import { getProperties } from '@/data/properties'
 export default async function PropertiesTable({
   page = 1
 }: {
-  page: number
+  page?: number
 }) {
   const {data, totalPages} = await getProperties({
     pagination: {
