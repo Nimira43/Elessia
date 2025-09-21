@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getProperties } from '@/data/properties'
 
@@ -53,9 +54,20 @@ export default async function PropertiesTable({
             <TableRow>
               <TableCell
                 colSpan={4}
-                className=''
+                className='text-center'
               >
-
+                {
+                  Array.from({
+                    length: totalPages
+                  }).map((_, i) => (
+                    <Button
+                      key={i}
+                      asChild
+                    >
+                      
+                    </Button>
+                  ))
+                }
               </TableCell>
             </TableRow>
           </TableFooter>
