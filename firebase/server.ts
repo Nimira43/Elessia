@@ -35,8 +35,13 @@ if (!currentApps.length) {
 
 export {firestore, auth} 
 
-export const getTotalPages = async () => {
-  
+export const getTotalPages = async (
+  firestoreQuery: FirebaseFirestore.Query<
+    FirebaseFirestore.DocumentData, 
+    FirebaseFirestore.DocumentData
+  >
+) => {
+
 }
 
 
