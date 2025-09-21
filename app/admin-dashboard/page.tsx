@@ -4,7 +4,11 @@ import Link from 'next/link'
 import { AiOutlinePlus } from 'react-icons/ai'
 import PropertiesTable from './properties-table'
 
-export default async function AdminDashboard() {
+export default async function AdminDashboard({
+  searchParams
+}: {
+  searchParams: Promise<any>
+}) {
   return (
     <div>
       <Breadcrumbs
