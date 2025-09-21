@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getProperties } from '@/data/properties'
+import Link from 'next/link'
 
 export default async function PropertiesTable({
   page = 1
@@ -64,7 +65,9 @@ export default async function PropertiesTable({
                       key={i}
                       asChild
                     >
-                      
+                      <Link 
+                        href={`/admin-dashboard?page=${i + 1}`}
+                      />
                     </Button>
                   ))
                 }
