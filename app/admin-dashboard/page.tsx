@@ -5,10 +5,12 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import PropertiesTable from './properties-table'
 
 export default async function AdminDashboard({
-  searchParams
+  searchParams,
 }: {
-  searchParams: Promise<any>
+  searchParams?: Promise<any>
 }) {
+  const searchParamsValue = await searchParams
+  console.log({searchParamsValue})
   return (
     <div>
       <Breadcrumbs
@@ -23,7 +25,12 @@ export default async function AdminDashboard({
           New Property
         </Link>
       </Button>
-      <PropertiesTable />
+      <PropertiesTable  
+        page={searchParamsValue?.page 
+          ? parseInt(searchParamsValue.page) 
+          : 1
+        }
+      />
     </div>
   )
 }
