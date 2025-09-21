@@ -36,7 +36,7 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
     propertiesQuery = propertiesQuery.where('status', 'in', status)
   }
 
-  const totalPages = await getTotalPages()
+  const totalPages = await getTotalPages(propertiesQuery, pageSize)
 
   const propertiesSnapshot = await propertiesQuery
     .limit(pageSize)
