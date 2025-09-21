@@ -47,5 +47,5 @@ export const getProperties = async (options?: GetPropertiesOptions) => {
   ...doc.data()
   } as Property))
 
-  return { data: properties}
+  return { data: properties, totalPages}
 }
