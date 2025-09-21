@@ -50,7 +50,14 @@ export default async function PropertiesTable({
             })}
           </TableBody>
           <TableFooter>
-            
+            <TableRow>
+              <TableCell
+                colSpan={4}
+                className=''
+              >
+
+              </TableCell>
+            </TableRow>
           </TableFooter>
         </Table>
       }
