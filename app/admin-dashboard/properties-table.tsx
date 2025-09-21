@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getProperties } from '@/data/properties'
 
 export default async function PropertiesTable({
@@ -49,6 +49,9 @@ export default async function PropertiesTable({
               )
             })}
           </TableBody>
+          <TableFooter>
+            
+          </TableFooter>
         </Table>
       }
     </>
