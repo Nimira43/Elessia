@@ -2,7 +2,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getProperties } from '@/data/properties'
 
 export default async function PropertiesTable() {
-  const {data} = await getProperties()
+  const {data, totalPages} = await getProperties()
   console.log({data})
   
   return (
