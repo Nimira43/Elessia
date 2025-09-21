@@ -46,6 +46,8 @@ export const getTotalPages = async (
   const countData = countSnapshot.data()
   const total = countData.count
   const totalPages = Math.ceil(total / pageSize)
+
+  return totalPages
 }
 
 
