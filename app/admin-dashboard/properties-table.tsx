@@ -1,7 +1,11 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getProperties } from '@/data/properties'
 
-export default async function PropertiesTable() {
+export default async function PropertiesTable({
+  page
+}: {
+  page: number
+}) {
   const {data, totalPages} = await getProperties({
     pagination: {
       pageSize: 5,
