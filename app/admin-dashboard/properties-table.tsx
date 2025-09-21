@@ -2,12 +2,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getProperties } from '@/data/properties'
 
 export default async function PropertiesTable({
-  page
+  page = 1
 }: {
   page: number
 }) {
   const {data, totalPages} = await getProperties({
     pagination: {
+      page,
       pageSize: 5,
     }
   })
