@@ -63,11 +63,15 @@ export default async function PropertiesTable({
                   }).map((_, i) => (
                     <Button
                       key={i}
-                      asChild
+                      asChild  
+                      className='mx-1'
+                      variant='outline'
                     >
                       <Link 
                         href={`/admin-dashboard?page=${i + 1}`}
-                      />
+                      >
+                        {i + 1}
+                      </Link>
                     </Button>
                   ))
                 }
