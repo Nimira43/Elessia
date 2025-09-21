@@ -35,10 +35,11 @@ if (!currentApps.length) {
 
 export {firestore, auth} 
 
+export const getTotalPages = async () => {
+  
+}
+
 
 /* Try this if have issues
-
 private_key: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-
-
 */
