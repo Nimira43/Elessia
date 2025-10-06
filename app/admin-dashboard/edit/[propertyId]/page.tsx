@@ -1,4 +1,8 @@
-export default function EditProperty() {
+export default function EditProperty({
+  params
+}: {
+  
+}) {
   return (
     <div>Edit Property</div>
   )
