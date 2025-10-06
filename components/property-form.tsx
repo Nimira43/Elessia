@@ -56,7 +56,8 @@ export default function PropertyForm({
                     >
                       <SelectTrigger>
                         <SelectValue />
-                      </SelectTrigger>                    <SelectContent>
+                      </SelectTrigger>                    
+                      <SelectContent>
                         <SelectItem value='draft'>
                           Draft
                         </SelectItem>

@@ -39,7 +39,6 @@ export default function NewPropertyForm() {
     })
     
     router.push('/admin-dashboard')
-    console.log(response)
   }
 
   return (

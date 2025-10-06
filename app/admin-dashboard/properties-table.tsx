@@ -15,7 +15,6 @@ export default async function PropertiesTable({
       pageSize: 5,
     }
   })
-  console.log({data, totalPages})
   
   return (
     <>

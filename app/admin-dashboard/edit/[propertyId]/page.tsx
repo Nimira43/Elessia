@@ -7,6 +7,7 @@ export default async function EditProperty({
 }) {
   const paramsValue = await params
   const property = await getPropertyById(paramsValue.propertyId)
+  console.log(property)
 
   return (
     <div>Edit Property</div>
