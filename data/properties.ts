@@ -55,4 +55,9 @@ export const getPropertyById = async(propertyId: string) => {
     .collection('properties')
     .doc(propertyId)
     .get()
+  
+  const propertyData = {
+    id: propertySnapshot.id, 
+    ...propertySnapshot.data() 
+  } as Property
 }
