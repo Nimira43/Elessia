@@ -1,3 +1,4 @@
+import { Breadcrumbs } from '@/components/ui/breadcrumb'
 import { getPropertyById } from '@/data/properties'
 
 export default async function EditProperty({
@@ -10,6 +11,18 @@ export default async function EditProperty({
   console.log(property)
 
   return (
-    <div>Edit Property</div>
+    <div>
+      <Breadcrumbs 
+        items={[{
+          href: '/admin-dashboard',
+          label: 'Dashboard'
+        }, {
+          label: 'Edit Property'
+        }]}
+      >
+
+      </Breadcrumbs>
+
+    </div>
   )
 }
