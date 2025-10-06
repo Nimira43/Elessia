@@ -60,4 +60,6 @@ export const getPropertyById = async(propertyId: string) => {
     id: propertySnapshot.id, 
     ...propertySnapshot.data() 
   } as Property
+
+  return propertyData
 }
