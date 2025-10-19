@@ -32,7 +32,9 @@ export default async function EditProperty({
           </CardTitle>
         </CardHeader>
         <CardContent> 
-          <EditPropertyForm />
+          <EditPropertyForm 
+          
+          />
         </CardContent>
       </Card>
     </div>

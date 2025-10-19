@@ -1,6 +1,12 @@
 'use client'
 
-export default function EditPropertyForm() {
+import { Property } from '@/types/property'
+
+type Props = Property
+
+export default function EditPropertyForm({
+
+}: Props) {
   return (
     <div>Edit Property Form</div>
   )
