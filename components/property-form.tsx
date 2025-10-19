@@ -18,8 +18,24 @@ type Props = {
 
 export default function PropertyForm({
   handleSubmit,
-  submitButtonLabel
+  submitButtonLabel,
+  defaultValues
 }: Props) {
+  const combinedDefaultValues = {
+    ...{
+      address1: '',
+      address2: '',
+      city: '',
+      postcode: '',
+      price: 0,
+      bedrooms: 0,
+      bathrooms: 0,
+      status: 'draft',
+      description: ''
+    },
+    ...defaultValues
+  }
+
   const form = useForm<z.infer<typeof propertyDataSchema>>({
     resolver: zodResolver(propertyDataSchema),
     defaultValues: {
