@@ -4,6 +4,7 @@ import PropertyForm from '@/components/property-form'
 import { Property } from '@/types/property'
 import { propertyDataSchema } from '@/validation/propertySchema'
 import z from 'zod'
+import { LiaSave } from 'react-icons/lia'
 
 type Props = Property
 
@@ -25,7 +26,12 @@ export default function EditPropertyForm({
     <div>
       <PropertyForm 
         handleSubmit={handleSubmit}
-        submitButtonLabel='Save Property'
+        submitButtonLabel={
+          <>
+            <LiaSave />
+            Save Property          
+          </>
+        }
         defaultValues={{
           address1,
           address2, 
