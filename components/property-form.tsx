@@ -38,17 +38,7 @@ export default function PropertyForm({
 
   const form = useForm<z.infer<typeof propertyDataSchema>>({
     resolver: zodResolver(propertyDataSchema),
-    defaultValues: {
-      address1: '',
-      address2: '',
-      city: '',
-      postcode: '',
-      price: 0,
-      bedrooms: 0,
-      bathrooms: 0,
-      status: 'draft',
-      description: ''
-    }
+    defaultValues: combinedDefaultValues
   })
   return (
     <Form {...form}>
