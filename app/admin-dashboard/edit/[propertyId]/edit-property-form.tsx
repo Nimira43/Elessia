@@ -24,7 +24,21 @@ export default function EditPropertyForm({
   
   return (
     <div>
-      <PropertyForm />
+      <PropertyForm 
+        handleSubmit={handleSubmit}
+        submitButtonLabel='Save Property'
+        defaultValues={{
+          address1,
+          address2, 
+          city, 
+          postcode, 
+          bathrooms, 
+          bedrooms, 
+          description, 
+          price, 
+          status
+        }}
+      />
     </div>
   )
 }
