@@ -8,7 +8,6 @@ import z from 'zod'
 type Props = Property
 
 export default function EditPropertyForm({
-  id, 
   address1,
   address2, 
   city, 

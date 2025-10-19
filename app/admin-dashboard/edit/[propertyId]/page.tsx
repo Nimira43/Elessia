@@ -33,7 +33,16 @@ export default async function EditProperty({
         </CardHeader>
         <CardContent> 
           <EditPropertyForm 
-          
+            id={property.id}
+            address1={property.address1}
+            address2={property.address2}
+            city={property.city}
+            postcode={property.postcode}
+            bathrooms ={property.bathrooms}
+            bedrooms ={property.bedrooms}
+            description ={property.description}
+            price={property.price}
+            status={property.status}
           />
         </CardContent>
       </Card>
