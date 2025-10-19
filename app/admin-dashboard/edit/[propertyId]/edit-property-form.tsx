@@ -1,6 +1,9 @@
 'use client'
 
+import PropertyForm from '@/components/property-form'
 import { Property } from '@/types/property'
+import { propertyDataSchema } from '@/validation/propertySchema'
+import z from 'zod'
 
 type Props = Property
 
@@ -17,7 +20,11 @@ export default function EditPropertyForm({
   status
 
 }: Props) {
+  const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {}
+  
   return (
-    <div>Edit Property Form</div>
+    <div>
+      <PropertyForm />
+    </div>
   )
 }
