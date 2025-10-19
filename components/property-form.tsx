@@ -21,7 +21,7 @@ export default function PropertyForm({
   submitButtonLabel,
   defaultValues
 }: Props) {
-  const combinedDefaultValues = {
+  const combinedDefaultValues: z.infer<typeof propertyDataSchema> = {
     ...{
       address1: '',
       address2: '',
