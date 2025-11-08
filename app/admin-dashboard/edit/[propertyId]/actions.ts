@@ -27,7 +27,7 @@ export const updateProperty = async (data: Property, authToken: string) => {
     .collection('properties')
     .doc(id)
     .update({
-    ...propertyData,
-    updated: new Date()
-  })
+      ...propertyData,
+      updated: new Date()
+    })
 }

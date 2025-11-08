@@ -5,6 +5,7 @@ import { Property } from '@/types/property'
 import { propertyDataSchema } from '@/validation/propertySchema'
 import z from 'zod'
 import { LiaSave } from 'react-icons/lia'
+import { auth } from '@/firebase/client'
 
 type Props = Property
 
@@ -20,7 +21,13 @@ export default function EditPropertyForm({
   status
 
 }: Props) {
-  const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {}
+  const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {
+    const token = await auth?.currentUser?.getIdToken()
+
+    if (!token) {
+      return
+    }
+  }
   
   return (
     <div>
