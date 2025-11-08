@@ -7,10 +7,12 @@ import z from 'zod'
 import { LiaSave } from 'react-icons/lia'
 import { auth } from '@/firebase/client'
 import { updateProperty } from './actions'
+import { useRouter } from 'next/navigation'
 
 type Props = Property
 
 export default function EditPropertyForm({
+  id,
   address1,
   address2, 
   city, 
@@ -22,6 +24,7 @@ export default function EditPropertyForm({
   status
 
 }: Props) {
+  const router = useRouter()
   const handleSubmit = async (data: z.infer<typeof propertyDataSchema>) => {
     const token = await auth?.currentUser?.getIdToken()
 
@@ -29,7 +32,8 @@ export default function EditPropertyForm({
       return
     }
 
-    await updateProperty(data, token)
+    await updateProperty({...data, id },  token)
+    router.push('/admin-dashboard')
   }
   
   return (
