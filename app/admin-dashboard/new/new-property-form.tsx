@@ -5,7 +5,7 @@ import { propertyDataSchema } from '@/validation/propertySchema'
 import z from 'zod'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { useAuth } from '@/context/auth'
-import { saveNewProperty } from './actions'
+import { createProperty } from './actions'
 import { toast } from '@/hooks/use-toast'
 import { useRouter } from 'next/navigation'
 
