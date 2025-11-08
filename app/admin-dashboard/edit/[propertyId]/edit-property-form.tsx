@@ -6,6 +6,7 @@ import { propertyDataSchema } from '@/validation/propertySchema'
 import z from 'zod'
 import { LiaSave } from 'react-icons/lia'
 import { auth } from '@/firebase/client'
+import { updateProperty } from './actions'
 
 type Props = Property
 
@@ -27,6 +28,8 @@ export default function EditPropertyForm({
     if (!token) {
       return
     }
+
+    await updateProperty
   }
   
   return (
