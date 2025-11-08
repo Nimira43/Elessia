@@ -8,6 +8,7 @@ import { LiaSave } from 'react-icons/lia'
 import { auth } from '@/firebase/client'
 import { updateProperty } from './actions'
 import { useRouter } from 'next/navigation'
+import { toast } from '@/hooks/use-toast'
 
 type Props = Property
 
@@ -33,6 +34,11 @@ export default function EditPropertyForm({
     }
 
     await updateProperty({...data, id },  token)
+    toast({
+      title: 'Success',
+      description: 'Property updated!',
+      variant: 'default'
+    })
     router.push('/admin-dashboard')
   }
   
