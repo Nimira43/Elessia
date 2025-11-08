@@ -29,7 +29,7 @@ export default function EditPropertyForm({
       return
     }
 
-    await updateProperty
+    await updateProperty(data, token)
   }
   
   return (
