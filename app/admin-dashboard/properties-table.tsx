@@ -45,7 +45,9 @@ export default async function PropertiesTable({
               return (
                 <TableRow key={property.id}>
                   <TableCell>{address}</TableCell>
-                  <TableCell>{property.price}</TableCell>
+                  <TableCell>
+                    {numeral(property.price).format('0,0')}
+                  </TableCell>
                   <TableCell>{property.status}</TableCell>
                   <TableCell>
                     View | 
