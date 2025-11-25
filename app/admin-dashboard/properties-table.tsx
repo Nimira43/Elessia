@@ -3,6 +3,7 @@ import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, Table
 import { getProperties } from '@/data/properties'
 import Link from 'next/link'
 import { SlPencil } from 'react-icons/sl'
+import { IoEyeOutline } from 'react-icons/io5'
 import numeral from 'numeral'
 
 export default async function PropertiesTable({
@@ -46,11 +47,21 @@ export default async function PropertiesTable({
                 <TableRow key={property.id}>
                   <TableCell>{address}</TableCell>
                   <TableCell>
-                    {numeral(property.price).format('0,0')}
+                    £{numeral(property.price).format('0,0')}
                   </TableCell>
                   <TableCell>{property.status}</TableCell>
-                  <TableCell>
-                    View | 
+                  <TableCell className='flex justify-end gap-1'>
+                    <Button 
+                      variant='outline'
+                      asChild
+                      size='sm'
+                    >
+                      <Link
+                        href={`/property/${property.id}`}
+                      >
+                        <IoEyeOutline />
+                      </Link>
+                    </Button> 
                     <Button 
                       variant='outline'
                       asChild
