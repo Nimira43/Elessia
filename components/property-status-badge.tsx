@@ -9,10 +9,10 @@ const statusLabel = {
 }
 
 const variant = {
-  'for-sale': 'ForSale',
-  withdrawn: 'Withdrawn',
-  draft: 'Draft',
-  sold: 'Sold'
+  'for-sale': 'primary',
+  withdrawn: 'destructive',
+  draft: 'secondary',
+  sold: 'success'
 }
 
 export default function PropertyStatusBadge({
