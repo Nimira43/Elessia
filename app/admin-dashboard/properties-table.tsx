@@ -49,6 +49,7 @@ export default async function PropertiesTable({
                   <TableCell>
                     View | 
                     <Button 
+                      variant='outline'
                       asChild
                       size='sm'
                     >
