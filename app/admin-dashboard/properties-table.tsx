@@ -3,6 +3,7 @@ import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, Table
 import { getProperties } from '@/data/properties'
 import Link from 'next/link'
 import { SlPencil } from 'react-icons/sl'
+import numeral from 'numeral'
 
 export default async function PropertiesTable({
   page = 1
