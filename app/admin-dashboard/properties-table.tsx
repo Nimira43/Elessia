@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { SlPencil } from 'react-icons/sl'
 import { IoEyeOutline } from 'react-icons/io5'
 import numeral from 'numeral'
+import PropertyStatusBadge from '@/components/property-status-badge'
 
 export default async function PropertiesTable({
   page = 1
@@ -49,7 +50,12 @@ export default async function PropertiesTable({
                   <TableCell>
                     £{numeral(property.price).format('0,0')}
                   </TableCell>
-                  <TableCell>{property.status}</TableCell>
+                  <TableCell>
+                    <PropertyStatusBadge 
+                      status={property.status}
+                    
+                    />
+                  </TableCell>
                   <TableCell className='flex justify-end gap-1'>
                     <Button 
                       variant='outline'

@@ -11,12 +11,12 @@ const statusLabel = {
 const variant: {[
   key: string
 ]
-  : 'primary' | 'destructive' | 'secondary' | 'success'
+  : 'primary' | 'destructive' | 'warning' | 'success'
 
 } = {
   'for sale': 'primary',
   withdrawn: 'destructive',
-  draft: 'secondary',
+  draft: 'warning',
   sold: 'success'
 }
 
