@@ -95,8 +95,9 @@ export default async function PropertiesTable({
                     length: totalPages
                   }).map((_, i) => (
                     <Button
+                      disabled={page === i + 1}
                       key={i}
-                      asChild  
+                      asChild={page !== i + 1}
                       className='mx-1'
                       variant='outline'
                     >
