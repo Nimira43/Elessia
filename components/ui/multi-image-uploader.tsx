@@ -1,6 +1,10 @@
 'use client'
 
-export type ImageUpload = {}
+export type ImageUpload = {
+  id: string
+  url: string
+  file?: File
+}
 
 type Props = {
   images?: ImageUpload[] 
