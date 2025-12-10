@@ -8,6 +8,7 @@ export type ImageUpload = {
 
 type Props = {
   images?: ImageUpload[] 
+  onImagesChange: (images: ImageUpload[]) => void
 }
 
 export default function MultiImageUploader({
