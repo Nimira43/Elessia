@@ -14,6 +14,6 @@ type Props = {
 export default function MultiImageUploader({
   images,
   onImagesChange
-}) {
+}: Props) {
 
 }
