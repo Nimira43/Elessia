@@ -62,7 +62,13 @@ export default function MultiImageUploader({
           direction='vertical'
         >
           {(provided) => (
-            <div></div>
+            <div
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+
+
+            </div>
           )}
         </Droppable>
       </DragDropContext>
