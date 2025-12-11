@@ -19,6 +19,10 @@ export default function MultiImageUploader({
   onImagesChange
 }: Props) {
   const uploadInputRef = useRef<HTMLInputElement | null>(null)
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
+  }
+  
   return (
     <div className='w-full max-w-3xl mx-auto p-4'>
       <input
