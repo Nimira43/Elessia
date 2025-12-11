@@ -101,11 +101,11 @@ export default function MultiImageUploader({
                             </Badge>
                           }
                         </div>
-                        <div className='flex items-center'>
-                          <button>
+                        <div className='flex items-center p-2'>
+                          <button className='text-red-600 p-2'>
                             <RxCross2 />
                           </button>
-                          <div>
+                          <div className='text-green-600'>
                             <RxMove />
                           </div>
                         </div>
