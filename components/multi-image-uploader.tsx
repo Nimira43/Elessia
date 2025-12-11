@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { Button } from './ui/button'
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd'
 import Image from 'next/image'
+import { Badge } from './ui/badge'
 
 export type ImageUpload = {
   id: string
@@ -80,7 +81,7 @@ export default function MultiImageUploader({
                       ref={provided.innerRef}
                       className='relative p-2'
                     >
-                      <div className='bg-grey-light-extra rounded-md flex items-center overflow-hidden'>
+                      <div className='bg-grey-light-extra rounded-md flex items-center gap-2 overflow-hidden'>
                         <div className='size-16 relative'>
                           <Image 
                             src={image.url}
@@ -93,6 +94,11 @@ export default function MultiImageUploader({
                           <p className='text-sm font-medium'>
                             Image {index + 1}
                           </p>
+                          {index === 0 &&
+                            <Badge variant='success'>
+                              Featured Image
+                            </Badge>
+                          }
                         </div>
                       </div>
                     </div>
