@@ -48,3 +48,5 @@ export const propertyImageSchema = z.object({
       })
     )
 }) 
+
+export const propertySchema = propertyDataSchema.and(propertyImageSchema)
