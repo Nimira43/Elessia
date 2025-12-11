@@ -44,6 +44,7 @@ export const propertyImageSchema = z.object({
           .string(),
         file: z
           .instanceof(File)
+          .optional()
       })
     )
 }) 
