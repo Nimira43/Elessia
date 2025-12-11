@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { Button } from './ui/button'
+import { DragDropContext } from '@hello-pangea/dnd'
 
 export type ImageUpload = {
   id: string
@@ -44,6 +45,7 @@ export default function MultiImageUploader({
         onChange={handleInputChange}
       />
       <Button
+        className='w-full'
         type='button'
         variant='outline'
         onClick={
@@ -52,6 +54,7 @@ export default function MultiImageUploader({
       >
         Upload Images
       </Button>
+      <DragDropContext></DragDropContext>
     </div>
   )
 }
