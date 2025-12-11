@@ -225,7 +225,7 @@ export default function PropertyForm({
                       form.setValue('images', images)
                     }
                   }
-                  images={}
+                  images={field.value}
                 />
               </FormControl>
               <FormMessage />
