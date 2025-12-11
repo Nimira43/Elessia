@@ -54,7 +54,9 @@ export default function MultiImageUploader({
       >
         Upload Images
       </Button>
-      <DragDropContext>
+      <DragDropContext
+        onDragEnd={() => {}}
+      >
         <Droppable
           droppableId='property-images'
           direction='vertical'
