@@ -19,9 +19,10 @@ export default function MultiImageUploader({
   onImagesChange
 }: Props) {
   const uploadInputRef = useRef<HTMLInputElement | null>(null)
+  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
-    
+    console.log(files)
   }
   
   return (
@@ -32,6 +33,7 @@ export default function MultiImageUploader({
         type='file'
         multiple
         accept='images/*'
+        onChange={handleInputChange}
       />
       <Button
         type='button'
