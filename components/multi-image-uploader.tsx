@@ -80,8 +80,8 @@ export default function MultiImageUploader({
                       ref={provided.innerRef}
                       className='relative p-2'
                     >
-                      <div className='bg-grey-light-extra rounded-md flex items-center'>
-                        <div className='size-16'>
+                      <div className='bg-grey-light-extra rounded-md flex items-center overflow-hidden'>
+                        <div className='size-16 relative'>
                           <Image 
                             src={image.url}
                             alt=''
