@@ -213,12 +213,24 @@ export default function PropertyForm({
             />
           </fieldset>
         </div>
-        <MultiImageUploader
-          onImagesChange={
-            (images: ImageUpload[]) => { 
-              form.setValue('images', images)
-            }
-          }
+        <FormField 
+          control={form.control} 
+          name='images' 
+          render={({field}) => (
+            <FormItem>
+              <FormControl>
+                <MultiImageUploader
+                  onImagesChange={
+                    (images: ImageUpload[]) => {
+                      form.setValue('images', images)
+                    }
+                  }
+                  images={}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} 
         />
         <Button 
           type='submit'
