@@ -66,9 +66,11 @@ export default function MultiImageUploader({
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {images.map((image) => (
+              {images.map((image, index) => (
                 <Draggable
                   key={image.id}
+                  draggableId={image.id}
+                  index={index}
                 >
 
                 </Draggable>
