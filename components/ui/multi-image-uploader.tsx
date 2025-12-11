@@ -29,6 +29,9 @@ export default function MultiImageUploader({
       />
       <Button
         type='button'
+        onClick={
+          () => uploadInputRef?.current?.click()
+        }
       >
         Upload Images
       </Button>
