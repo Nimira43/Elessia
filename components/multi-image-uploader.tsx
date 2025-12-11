@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { Button } from './ui/button'
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd'
+import Image from 'next/image'
 
 export type ImageUpload = {
   id: string
@@ -80,7 +81,14 @@ export default function MultiImageUploader({
                       className='relative p-2'
                     >
                       <div className='bg-grey-light-extra rounded-md flex items-center'>
-
+                        <div className='size-16'>
+                          <Image 
+                            src={image.url}
+                            alt=''
+                            fill
+                            className='object-cover'
+                          />
+                        </div>
                       </div>
                     </div>
                   )}
