@@ -35,5 +35,15 @@ export const propertyDataSchema = z.object({
 })
 
 export const propertyImageSchema = z.object({
-  
+  images: z
+    .array(z
+      .object({
+        id: z
+          .string(),
+        url: z
+          .string(),
+        file: z
+          .instanceof(File)
+      })
+    )
 }) 
