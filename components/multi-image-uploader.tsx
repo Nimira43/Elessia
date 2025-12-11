@@ -77,8 +77,11 @@ export default function MultiImageUploader({
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       ref={provided.innerRef}
+                      className='relative p-2'
                     >
+                      <div className='bg-grey-light-extra rounded-md flex items-center'>
 
+                      </div>
                     </div>
                   )}
                 </Draggable>
