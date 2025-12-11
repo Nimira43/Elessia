@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { Button } from './ui/button'
-import { DragDropContext, Droppable } from '@hello-pangea/dnd'
+import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd'
 
 export type ImageUpload = {
   id: string
@@ -66,8 +66,13 @@ export default function MultiImageUploader({
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
+              {images.map((image) => (
+                <Draggable
+                  key={image.id}
+                >
 
-
+                </Draggable>
+              ))}
             </div>
           )}
         </Droppable>
