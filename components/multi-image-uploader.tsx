@@ -5,6 +5,7 @@ import { Button } from './ui/button'
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd'
 import Image from 'next/image'
 import { Badge } from './ui/badge'
+import { RxCross2, RxMove } from 'react-icons/rx'
 
 export type ImageUpload = {
   id: string
@@ -99,6 +100,14 @@ export default function MultiImageUploader({
                               Featured Image
                             </Badge>
                           }
+                        </div>
+                        <div className='flex items-center'>
+                          <button>
+                            <RxCross2 />
+                          </button>
+                          <div>
+                            <RxMove />
+                          </div>
                         </div>
                       </div>
                     </div>
