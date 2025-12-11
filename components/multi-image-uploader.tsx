@@ -61,7 +61,9 @@ export default function MultiImageUploader({
           droppableId='property-images'
           direction='vertical'
         >
-
+          {(provided) => (
+            <div></div>
+          )}
         </Droppable>
       </DragDropContext>
     </div>
