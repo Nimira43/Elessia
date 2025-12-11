@@ -89,6 +89,11 @@ export default function MultiImageUploader({
                             className='object-cover'
                           />
                         </div>
+                        <div className='flex-grow'>
+                          <p className='text-sm font-medium'>
+                            Image {index + 1}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   )}
