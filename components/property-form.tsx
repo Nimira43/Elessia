@@ -216,7 +216,7 @@ export default function PropertyForm({
         <MultiImageUploader
           onImagesChange={
             (images: ImageUpload[]) => { 
-              console.log({images})
+              form.setValue('images', images)
             }
           }
         />
