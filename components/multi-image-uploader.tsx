@@ -15,7 +15,7 @@ type Props = {
 }
 
 export default function MultiImageUploader({
-  images,
+  images = [],
   onImagesChange
 }: Props) {
   const uploadInputRef = useRef<HTMLInputElement | null>(null)
@@ -24,9 +24,13 @@ export default function MultiImageUploader({
     const files = Array.from(e.target.files || [])
     const newImages = files.map((file, index) => {
       return {
-        id: `${Date.now()}-${index}-${file.name}`
+        id: `${Date.now()}-${index}-${file.name}`,
+        url: URL.createObjectURL(file),
+        file
       }
     })
+
+    onImagesChange([...images, ...newImages])
   }
   
   return (
