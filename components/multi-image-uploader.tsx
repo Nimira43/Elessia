@@ -72,7 +72,15 @@ export default function MultiImageUploader({
                   draggableId={image.id}
                   index={index}
                 >
+                  {(provided) => (
+                    <div
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      ref={provided.innerRef}
+                    >
 
+                    </div>
+                  )}
                 </Draggable>
               ))}
             </div>
