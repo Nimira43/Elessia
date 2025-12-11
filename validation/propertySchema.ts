@@ -33,3 +33,7 @@ export const propertyDataSchema = z.object({
       'draft', 'for sale', 'withdrawn', 'sold'
     ])
 })
+
+export const propertyImageSchema = z.object({
+  
+}) 
