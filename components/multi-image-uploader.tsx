@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { Button } from './ui/button'
-import { DragDropContext } from '@hello-pangea/dnd'
+import { DragDropContext, Droppable } from '@hello-pangea/dnd'
 
 export type ImageUpload = {
   id: string
@@ -54,7 +54,14 @@ export default function MultiImageUploader({
       >
         Upload Images
       </Button>
-      <DragDropContext></DragDropContext>
+      <DragDropContext>
+        <Droppable
+          droppableId='property-images'
+          direction='vertical'
+        >
+
+        </Droppable>
+      </DragDropContext>
     </div>
   )
 }
