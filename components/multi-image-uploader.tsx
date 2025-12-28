@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { Button } from './ui/button'
-import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd'
+import { DragDropContext, Draggable, Droppable, DropResult } from '@hello-pangea/dnd'
 import Image from 'next/image'
 import { Badge } from './ui/badge'
 import { RxCross2, RxMove } from 'react-icons/rx'
@@ -37,7 +37,11 @@ export default function MultiImageUploader({
     onImagesChange([...images, ...newImages])
   }
 
-  const handleDragEnd = () => {}
+  const handleDragEnd = (result: DropResult) => {
+    if (!result.destination) {
+      return
+    }
+  }
   
   return (
     <div className='w-full max-w-3xl mx-auto p-4'>
