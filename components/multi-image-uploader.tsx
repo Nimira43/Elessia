@@ -41,6 +41,9 @@ export default function MultiImageUploader({
     if (!result.destination) {
       return
     }
+
+    const items = Array.from(images)
+    const [reorderedImage] = items.splice(result.source.index, 1)
   }
   
   return (
