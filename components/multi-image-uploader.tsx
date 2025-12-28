@@ -41,11 +41,14 @@ export default function MultiImageUploader({
     if (!result.destination) {
       return
     }
-
     const items = Array.from(images)
     const [reorderedImage] = items.splice(result.source.index, 1)
     items.splice(result.destination.index, 0, reorderedImage)
     onImagesChange(items)
+  }
+
+  const handleDelete = (id: string) => {
+    const updatedImages = images.filter(image => image.id !== id)
   }
   
   return (
