@@ -36,6 +36,8 @@ export default function MultiImageUploader({
 
     onImagesChange([...images, ...newImages])
   }
+
+  const handleDragEnd = () => {}
   
   return (
     <div className='w-full max-w-3xl mx-auto p-4'>
@@ -58,7 +60,7 @@ export default function MultiImageUploader({
         Upload Images
       </Button>
       <DragDropContext
-        onDragEnd={() => {}}
+        onDragEnd={handleDragEnd}
       >
         <Droppable
           droppableId='property-images'
