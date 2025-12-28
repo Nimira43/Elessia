@@ -49,6 +49,7 @@ export default function MultiImageUploader({
 
   const handleDelete = (id: string) => {
     const updatedImages = images.filter(image => image.id !== id)
+    onImagesChange(updatedImages)
   }
   
   return (
