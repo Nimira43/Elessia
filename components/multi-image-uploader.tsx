@@ -44,6 +44,8 @@ export default function MultiImageUploader({
 
     const items = Array.from(images)
     const [reorderedImage] = items.splice(result.source.index, 1)
+    items.splice(result.destination.index, 0, reorderedImage)
+    onImagesChange(items)
   }
   
   return (
