@@ -113,7 +113,12 @@ export default function MultiImageUploader({
                           }
                         </div>
                         <div className='flex items-center p-2'>
-                          <button className='text-red-600 p-2'>
+                          <button
+                            className='text-red-600 p-2'
+                            onClick={
+                              () => handleDelete(image.id)
+                            }
+                          >
                             <RxCross2 />
                           </button>
                           <div className='text-green-600'>
